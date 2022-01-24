@@ -95,7 +95,52 @@ def main():
                 print('\n')
                 print(f"Account Credential for: {account} - UserName: {userName} - Password:{password} created succesfully")
                 print('\n')
+             elif short_code == "dc":
+                  if display_accounts_details():
+                    print("Here are all lists of accounts: ")
 
-                
+                    print('*' * 30)
+                    print('_' * 30)
+                    for account in display_accounts_details():
+                       print(f" Account:{account.account} \n User Name:{username}\n Password:{password}")
+                       print('*' * 30)
+                       print('*' * 30)
+                  else:
+                   print("You don't have any credentials saved yet in your account")
+             elif short_code == "fc":
+                  print("Enter the Account Name you want to search for")
+                  search_name = input().lower()
+                  if find_credential(search_name):
+                    search_credential = find_credential(search_name)
+                    print(f"Account Name : {search_credential.account}")
+                    print('*' * 50)
+                    print(f"User Name: {search_credential.userName} Password :{search_credential.password}")
+                    print('*' * 50)
+                  else:
+                     print("That Credential does not exist in your store")
+                     print('\n')
+             elif short_code == "del":
+                  print("Enter the account name of the Credentials you want to delete")
+                  search_name = input().lower()
+                  if find_credential(search_name):
+                     search_credential = find_credential(search_name)
+                     print("*"*50)
+                     search_credential.delete_credentials()
+                     print('\n')
+                     print(f"Your stored credentials for : {search_credential.account} successfully deleted!!!")
+                     print('\n')
+                  else:
+                    print("That Credential you want to delete does not exist in your store yet")
+
+             elif short_code == 'ex':
+                  print("Thanks for using passwords store manager.. See you next time!")
+                  break
+             else:
+                 print("Wrong entry... Check your entry again and let it match those in the store")
+        else:
+           print("Please enter a valid input to continue using the store")
+
+
+
 if __name__ == '__main__':
     main()
