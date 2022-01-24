@@ -60,6 +60,16 @@ def check_credendtials(account):
     return Credentials.if_credential_exist(account)
 
 
+def main():
+    print("Hello Welcome to your Accounts Password Store...\n ca--- Create New Account  \n")
+    short_code = input("").lower()
+    if short_code == "ca":
+        print("Create new Account")
+        print('*' * 50)
+        username = input("User_name: ")
+        password = input("Enter Password:")
 
 
 
+if __name__ == '__main__':
+    main()
