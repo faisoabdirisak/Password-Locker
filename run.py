@@ -69,7 +69,12 @@ def main():
         username = input("User_name: ")
         password = input("Enter Password:")
 
-
-
+        save_user(create_new_user(username, password))
+        print("*"*85)
+        print(f"Hello {username}, Your account has been created succesfully and Your password is: {password}")
+        print("*"*85)
+        
+        print(f"Hello {username}.Welcome To PassWord Locker Manager")
+        print('\n')
 if __name__ == '__main__':
     main()
