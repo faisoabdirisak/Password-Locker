@@ -76,5 +76,26 @@ def main():
         
         print(f"Hello {username}.Welcome To PassWord Locker Manager")
         print('\n')
+
+        while True:
+             print("Use these short codes:\n cc - Create a new credential \n dc - Display Credentials \n fc - Find a credential \n  del - Delete credential \n ex - Exit the application \n")
+             short_code = input().lower()
+             if short_code == "cc":
+                print("Create New Credential")
+                print("."*20)
+                print("Account name ....")
+                account = input().lower()
+                print("Your Account username")
+                userName = input()
+                print("Account password")
+                password = input("Enter Your Own Password\n")
+                
+                save_credentials(create_new_credential(
+                account, userName, password))
+                print('\n')
+                print(f"Account Credential for: {account} - UserName: {userName} - Password:{password} created succesfully")
+                print('\n')
+
+                
 if __name__ == '__main__':
     main()
