@@ -1,5 +1,5 @@
 import unittest
-from password import User
+from password import User,Credentials
 
 class TestClass(unittest.TestCase):
     """
@@ -28,6 +28,28 @@ class TestClass(unittest.TestCase):
         self.new_user.save_user()
         self.assertEqual(len(User.user_list), 1)
 
+# Credential class
+
+class TestCredentials(unittest.TestCase):
+    """
+    A test class that defines test cases for credentials class
+
+    """
+
+    def setUp(self):
+        """
+        Method that runs before each individual credentials test methods run.
+
+        """
+        self.new_credential = Credentials("twitter","faska-haji","faska12")
+
+    def test_init(self):
+        """
+        Test case to check if a new Credentials instance has been initialized correctly
+        """
+        self.assertEqual(self.new_credential.account, "twitter")
+        self.assertEqual(self.new_credential.userName, "faska-haji")
+        self.assertEqual(self.new_credential.password, "faska12")
 
 
 
