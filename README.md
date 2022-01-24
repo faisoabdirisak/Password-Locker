@@ -16,7 +16,7 @@
 This project is a python application that manages login and signup credentials of a person for various accounts i.e. username and passwords for each account. It also stores the passwords.
 
 ## Screenshot
-<img src= "" width="800px" height="400px">
+<img src= "Screenshot from 2022-01-24 18-17-56.png" width="800px" height="400px">
 
 ### Installation/Requirements
 # The application requires the following installations to operate 
